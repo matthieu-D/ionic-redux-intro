@@ -1,14 +1,23 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Ionic Redux Intro
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+
+  <div *ngFor="let color of colorList$ | async">
+    <div style="width: 100px;height: 100px" [style.backgroundColor]="color"></div>
+  </div>
+
+  <button ion-button (click)="addColors()">
+    Add some colors
+  </button>
+
+  <button ion-button (click)="removeLastColor()">
+    Remove last color
+  </button>
+
 </ion-content>
